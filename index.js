@@ -57,9 +57,9 @@ client.on('message', (message) => {
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of 콜라곰 BOT', helpImg)
+      .setAuthor('뭐요', helpImg)
       .setColor('#186de6')
-      .setFooter(`콜라곰 BOT ❤️`)
+      .setFooter(`ㅋㅋㅋ`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -71,10 +71,10 @@ client.on('message', (message) => {
     message.channel.send(embed)
   
   
-  } else if(message.content.startsWith('!전체공1지')) {
+  } else if(message.content.startsWith('!전체공지')) {
     if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
-      let contents = message.content.slice('!전체공1지'.length);
+      let contents = message.content.slice('!전체공지'.length);
       message.member.guild.members.array().forEach(x => {
         if(x.user.bot) return;
         x.user.send(`<@${message.author.id}> ${contents}`);
@@ -84,14 +84,14 @@ client.on('message', (message) => {
     } else {
       return message.reply('야래야래~');
     }
-  } else if(message.content.startsWith('!청소')) {
+  } else if(message.content.startsWith('!다지워버려')) {
     if(message.channel.type == 'dm') {
       return message.reply('야래야래~');
     }
     
     if(message.channel.type != 'dm' && checkPermission(message)) return
 
-    var clearLine = message.content.slice('!청소 '.length);
+    var clearLine = message.content.slice('!다지워버려 '.length);
     var isNum = !isNaN(clearLine)
 
     if(isNum && (clearLine <= 0 || 100 < clearLine)) {
