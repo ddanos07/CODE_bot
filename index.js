@@ -26,7 +26,7 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == 'CODE_bot status') {
-    return message.reply('CODE_bot ONLINE');
+    return message.channel.send('CODE_bot ONLINE');
   }
 
   if(message.content == '임베드') {
